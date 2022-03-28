@@ -80,7 +80,8 @@ ArticleLargeList.defaultProps = {
 };
 
 ArticleLargeList.propTypes = {
-  blogPosts: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object]))).isRequired,
+  blogPosts: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object])))
+    .isRequired,
   showLabel: PropTypes.bool,
 };
 

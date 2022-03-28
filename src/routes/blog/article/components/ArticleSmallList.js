@@ -44,7 +44,8 @@ function ArticleSmallList({ blogPosts }) {
 }
 
 ArticleSmallList.propTypes = {
-  blogPosts: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object]))).isRequired,
+  blogPosts: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object])))
+    .isRequired,
 };
 
 export default ArticleSmallList;
