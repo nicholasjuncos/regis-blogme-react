@@ -195,7 +195,7 @@ function ArticleDetailsImagesSlider({ slides }) {
 }
 
 ArticleDetailsImagesSlider.propTypes = {
-  slides: PropTypes.arrayOf(PropTypes.object).isRequired,
+  slides: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object]))).isRequired,
 };
 
 export default ArticleDetailsImagesSlider;
