@@ -6,8 +6,7 @@ phases:
       nodejs: 14
 
     commands:
-      # install yarn
-      - npm install yarn
+      - npm install
 
   build:
     commands:
