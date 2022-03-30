@@ -108,7 +108,7 @@ function SimpleFooter({ company, links, light }) {
 SimpleFooter.defaultProps = {
   company: { href: "/", name: "Nicholas Juncos" },
   links: [
-    { href: "/", name: "React-Django Blog" },
+    { href: "/", name: "Regis Blog-Me" },
     { href: "https://www.creative-tim.com/presentation", name: "About Us" },
     { href: "https://www.creative-tim.com/blog", name: "Blog" },
     { href: "https://www.creative-tim.com/license", name: "License" },

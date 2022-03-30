@@ -19,7 +19,7 @@ import routes from "new_routes";
 // import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/bg-presentation.jpg";
+import bgImage from "assets/images/bg-rental.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import ArticleLargeList from "../blog/article/components/ArticleLargeList";
