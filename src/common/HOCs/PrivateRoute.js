@@ -18,7 +18,7 @@ function PrivateRoute({ children }) {
     const token = localStorage.getItem("token");
     axios
       .post(
-        `${process.env.REACT_APP_DJANGO_BACKEND}api/auth/token/verify/`,
+        `${process.env.REACT_APP_DJANGO_BACKEND}auth/token/verify/`,
         { token },
         {
           headers: {
@@ -28,7 +28,7 @@ function PrivateRoute({ children }) {
       )
       .then(() => {
         axios
-          .get(`${process.env.REACT_APP_DJANGO_BACKEND}api/auth/user/`, {
+          .get(`${process.env.REACT_APP_DJANGO_BACKEND}auth/user/`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

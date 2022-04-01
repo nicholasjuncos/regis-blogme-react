@@ -66,7 +66,7 @@ export const createLike = (likeForm) => (dispatch) => {
     };
   }
   axios
-    .post(`${process.env.REACT_APP_DJANGO_BACKEND}api/blog/likes/`, data, headers)
+    .post(`${process.env.REACT_APP_DJANGO_BACKEND}blog/likes/`, data, headers)
     .then((response) => {
       dispatch({ type: "LIKE_SUCCESS", payload: response.data });
       dispatch(setMessage("success", `Successfully liked ${likeType}.`));
@@ -115,7 +115,7 @@ export const deleteLike = (likeForm) => (dispatch) => {
     };
   }
   axios
-    .delete(`${process.env.REACT_APP_DJANGO_BACKEND}api/blog/likes/${like.id}/`, headers)
+    .delete(`${process.env.REACT_APP_DJANGO_BACKEND}blog/likes/${like.id}/`, headers)
     .then((response) => {
       dispatch({ type: "LIKE_DELETE_SUCCESS", payload: response.data });
       dispatch(setMessage("success", `Successfully unliked ${likeType}.`));

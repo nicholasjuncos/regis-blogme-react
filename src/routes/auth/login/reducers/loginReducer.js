@@ -60,7 +60,7 @@ export const signup = (credentials, navigate) => (dispatch) => {
   dispatch({ type: "AUTHENTICATING" });
 
   axios
-    .post(`${process.env.REACT_APP_DJANGO_BACKEND}api/auth/registration/`, {
+    .post(`${process.env.REACT_APP_DJANGO_BACKEND}auth/registration/`, {
       first_name: credentials.firstName,
       last_name: credentials.lastName,
       email: credentials.email,
@@ -109,7 +109,7 @@ export const authenticate = (credentials, navigate) => (dispatch) => {
   dispatch({ type: "AUTHENTICATING" });
 
   axios
-    .post(`${process.env.REACT_APP_DJANGO_BACKEND}api/auth/login/`, {
+    .post(`${process.env.REACT_APP_DJANGO_BACKEND}auth/login/`, {
       username: credentials.username,
       password: credentials.password,
     })
@@ -152,7 +152,7 @@ export const checkAuthentication = (navigate) => (dispatch) => {
   const token = localStorage.getItem("token");
   axios
     .post(
-      `${process.env.REACT_APP_DJANGO_BACKEND}api/auth/token/verify/`,
+      `${process.env.REACT_APP_DJANGO_BACKEND}auth/token/verify/`,
       {
         token,
       },
@@ -164,7 +164,7 @@ export const checkAuthentication = (navigate) => (dispatch) => {
     )
     .then(() => {
       axios
-        .get(`${process.env.REACT_APP_DJANGO_BACKEND}api/auth/user/`, {
+        .get(`${process.env.REACT_APP_DJANGO_BACKEND}auth/user/`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

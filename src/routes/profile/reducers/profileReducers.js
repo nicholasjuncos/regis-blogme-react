@@ -51,7 +51,7 @@ export const setUser = (userForm) => (dispatch) => {
   }
   axios
     .put(
-      `${process.env.REACT_APP_DJANGO_BACKEND}api/auth/user/`,
+      `${process.env.REACT_APP_DJANGO_BACKEND}auth/user/`,
       {
         first_name: userForm.firstName,
         last_name: userForm.lastName,

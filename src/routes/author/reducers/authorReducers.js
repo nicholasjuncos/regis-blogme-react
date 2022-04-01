@@ -45,7 +45,7 @@ export const setErrorMessage = (errorMessage) => ({
 
 export const getAuthor = (username) => (dispatch) => {
   dispatch({ type: "USER_RETRIEVAL" });
-  const USER_URL = `${process.env.REACT_APP_DJANGO_BACKEND}api/users/${username}/`;
+  const USER_URL = `${process.env.REACT_APP_DJANGO_BACKEND}users/${username}/`;
   axios
     .get(USER_URL)
     .then((response) => {

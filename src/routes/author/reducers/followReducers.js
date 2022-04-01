@@ -72,7 +72,7 @@ export const createFollow = (followForm) => (dispatch) => {
     };
   }
   axios
-    .post(`${process.env.REACT_APP_DJANGO_BACKEND}api/blog/follows/`, data, headers)
+    .post(`${process.env.REACT_APP_DJANGO_BACKEND}blog/follows/`, data, headers)
     .then((response) => {
       dispatch({ type: "FOLLOW_SUCCESS", payload: response.data });
       dispatch(setMessage("success", `Successfully followed ${followForm.author.display_name}.`));
@@ -122,7 +122,7 @@ export const deleteFollow = (followForm) => (dispatch) => {
     };
   }
   axios
-    .delete(`${process.env.REACT_APP_DJANGO_BACKEND}api/blog/follows/${follow.id}/`, headers)
+    .delete(`${process.env.REACT_APP_DJANGO_BACKEND}blog/follows/${follow.id}/`, headers)
     .then(() => {
       dispatch({ type: "FOLLOW_DELETE_SUCCESS" });
       dispatch(setMessage("success", `Successfully unfollowed ${followForm.author.display_name}.`));

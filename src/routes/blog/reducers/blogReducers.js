@@ -69,7 +69,7 @@ export const setBlogPost = (blogForm, navigate) => (dispatch) => {
     };
   }
   let action = "created";
-  let postURL = `${process.env.REACT_APP_DJANGO_BACKEND}api/blog/posts/`;
+  let postURL = `${process.env.REACT_APP_DJANGO_BACKEND}blog/posts/`;
   if (blogForm.blogID) {
     postURL += blogForm.blogID.toString();
     postURL += "/";
@@ -128,7 +128,7 @@ export const setBlogPost = (blogForm, navigate) => (dispatch) => {
 
 export const getBlogPost = (articleID) => (dispatch) => {
   dispatch({ type: "BLOG_LOADING" });
-  const POST_URL = `${process.env.REACT_APP_DJANGO_BACKEND}api/blog/posts/${articleID}/`;
+  const POST_URL = `${process.env.REACT_APP_DJANGO_BACKEND}blog/posts/${articleID}/`;
   const token = localStorage.getItem("token");
   let headers = {};
   if (token) {
@@ -178,7 +178,7 @@ export const getBlogPosts = (extraArgs) => (dispatch) => {
   const status = extraArgs.status ? extraArgs.status : "";
   const postDate = extraArgs.postDate ? extraArgs.postDate : "";
   dispatch({ type: "BLOG_LOADING" });
-  const POST_URL = `${process.env.REACT_APP_DJANGO_BACKEND}api/blog/posts/?author__username=${author}&status=${status}&post_date__lte=${postDate}`;
+  const POST_URL = `${process.env.REACT_APP_DJANGO_BACKEND}blog/posts/?author__username=${author}&status=${status}&post_date__lte=${postDate}`;
   const token = localStorage.getItem("token");
   let headers = {};
   if (token) {
@@ -225,7 +225,7 @@ export const getBlogPosts = (extraArgs) => (dispatch) => {
 
 export const deleteBlogPost = (articleID, navigate) => (dispatch) => {
   dispatch({ type: "BLOG_LOADING" });
-  const POST_URL = `${process.env.REACT_APP_DJANGO_BACKEND}api/blog/posts/${articleID}/`;
+  const POST_URL = `${process.env.REACT_APP_DJANGO_BACKEND}blog/posts/${articleID}/`;
   const token = localStorage.getItem("token");
   let headers = {};
   if (token) {
