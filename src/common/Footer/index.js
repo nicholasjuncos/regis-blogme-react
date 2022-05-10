@@ -107,9 +107,7 @@ function SimpleFooter({ company, links, light }) {
 // Setting default values for the props of SimpleFooter
 SimpleFooter.defaultProps = {
   company: { href: "/", name: "Nicholas Juncos" },
-  links: [
-    { href: "/", name: "Regis Blog-Me" },
-  ],
+  links: [{ href: "/", name: "Regis Blog-Me" }],
   light: false,
 };
 
